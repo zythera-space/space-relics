@@ -72,6 +72,57 @@ body {
         display: none;
     }
 }
+    /* ===== GLOBAL SPACE BACKGROUND ===== */
+
+html {
+    background: #020817;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+
+/* Fixed video behind the entire website */
+#space-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Dark blue overlay for readable text */
+#space-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(2, 8, 23, 0.82),
+        rgba(5, 20, 55, 0.72),
+        rgba(12, 8, 42, 0.82)
+    );
+}
+
+/* Fallback for mobile devices */
+@media (max-width: 600px) {
+    #space-background {
+        display: none;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    #space-background {
+        display: none;
+    }
+}
 </style>
 </head>
 <body>
